@@ -151,3 +151,62 @@ son los únicos a los que les vamos a aplicar chmod de forma manual.
 
 La evidencia de los permisos aplicados está en
 *evidencias/permissions.txt*, que genera *etapa1_entorno.sh*.
+
+
+
+### Etapa 2. Desempaquetado, auditoría y captura de mediciones
+
+**1. ¿Qué transformación necesita la salida de cada utilería para
+convertirse en un registro del archivo normalizado?**
+
+De *df -P* tomamos la segunda línea y la quinta columna con *awk*,
+y quitamos el símbolo % con *tr -d*. De *ps* y de *find* contamos
+las líneas con *wc -l*. En *capturar.sh*, cada valor se guarda en
+*telemetria_raw.log* con fecha, hora y categoría. Después,
+*normalizar.sh* conserva solo la categoría y el valor, y agrega al
+inicio la etiqueta y la cantidad de registros.
+
+**2. ¿Por qué un valor cero puede ser válido y no debe confundirse
+con una captura fallida?**
+
+Porque cero es una medición real: PERMISOS = 0 significa que ningún
+archivo tiene escritura para el grupo u otros, que es lo esperado
+con nuestra política. Una captura fallida significa que no sabemos
+el valor. Si la sustituyéramos por cero, el informe afirmaría algo
+que no medimos. Por eso, con *set -o pipefail*, si un comando de la
+tubería falla registramos *ERROR*; *normalizar.sh* descarta esas
+líneas y avisa cuántas fueron.
+
+**3. ¿Cómo comprobarán que la cantidad del encabezado corresponde a
+los registros conservados?**
+
+Después de escribir *mediciones_sec.txt*, contamos las líneas desde
+la tercera con *tail -n +3 | wc -l* y las comparamos con la cantidad
+declarada. Si no coinciden, el script termina con error.
+
+**4. ¿Por qué el orden de las instrucciones dentro del flujo de sed
+es estrictamente determinante al habilitar directivas y eliminar
+comentarios?**
+
+Porque *sed* aplica las expresiones en orden a cada línea, y las
+directivas que queremos habilitar (*#Port 22* y *#HostKey*) son
+comentarios. Si primero borráramos las líneas que empiezan con #,
+desaparecerían antes de poder habilitarlas. Por eso primero quitamos
+el # y cambiamos el puerto a 8080, y después borramos los
+comentarios restantes y las líneas vacías.
+
+**5. ¿Qué estrategia se empleó para aislar el puerto sin limitar
+obtener correctamente los cuatro octetos de la IP?**
+
+El puerto va pegado a la dirección, después del último punto. Con
+*sed* reemplazamos por un espacio solo el punto seguido de dígitos
+que termina la dirección, es decir, que va seguido de un espacio o
+del final de la línea. Los puntos internos de la IP van seguidos de
+otro número y otro punto, así que no se modifican. No contamos
+cuatro octetos porque algunas conexiones tienen destino IPv6
+(*fd00::2.80*); con el último punto, la regla funciona en ambos
+casos.
+
+Además, validamos la integridad del paquete *.tar.gz* con *gzip -t*
+(compresión) y *tar -tzf* (estructura) antes de extraerlo, y
+comprobamos que contenga al menos 3 archivos.
