@@ -1,5 +1,4 @@
-/* Etapa 3: analizador de mediciones de sec_guard
-   Uso: sec_engine <entrada> <salida> */
+/* Etapa 3: analizador de mediciones de sec_guard*/
 
 #include <stdio.h>
 #include <stdlib.h>

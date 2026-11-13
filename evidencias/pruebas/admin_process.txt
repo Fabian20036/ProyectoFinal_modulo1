@@ -1,0 +1,9 @@
+Proceso: sleep 300, PID 1453255
+
+Iniciado (S = dormido):
+    PID STAT CMD
+1453255 S+   sleep 300
+
+Suspendido con kill -STOP (T = detenido):
+    PID STAT CMD
+1453255 T+   sleep 300

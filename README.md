@@ -245,3 +245,33 @@ posterior a *malloc*, liberamos la memoria y cerramos el
 archivo. En *main*, liberamos la memoria después de escribir el
 informe, y en *escribir* comprobamos que *fclose* cierre bien el
 archivo de salida.
+
+
+### Etapa 4. Integración y pruebas
+
+**1. ¿Cómo decide el script si puede continuar después de ejecutar
+el programa C?**
+
+Por el código de salida. sec_engine termina con 0 si generó el
+informe y con 1 si hubo un error. Al inicio de ejecutar.sh
+activamos set -e: si cualquier comando o script devuelve un
+código distinto de 0, el flujo se detiene en ese punto, y trap
+avisa que hubo un error.
+
+**2. ¿Cómo se distinguirá un informe nuevo de uno conservado de una
+ejecución anterior?**
+
+Al inicio, ejecutar.sh borra el informe y el binario anteriores.
+Si el flujo se detiene a la mitad, no queda ningún informe; si
+existe uno al final, solo pudo generarlo esta ejecución. Además,
+cada ejecución guarda una copia con la fecha y hora en el nombre
+(informe_AAAAMMDD_HHMMSS.txt), y la etiqueta se puede cambiar
+con un parámetro.
+
+**3. ¿Qué evidencia demuestra que el informe se obtuvo mediante el
+flujo completo y no se elaboró manualmente?**
+
+La salida de ejecutar.sh muestra cada etapa en orden. Los valores
+del informe se pueden rastrear hacia atrás: mediciones_sec.txt,
+telemetria_raw.log y la salida original de df y ps en
+evidencia_capturas.log, todos con la misma fecha y hora.

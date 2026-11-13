@@ -1,6 +1,13 @@
 .
   capturas
     estaticos
+      net_traffic.log
+      paquete_auditoria.tar.gz
+      secure.log
+      sshd_config
+    evidencia_capturas.log
+    telemetria_raw.log
+  ejecutar.sh
   enlace_pruebas
   evidencias
     arbol_directorios.txt
@@ -11,8 +18,19 @@
       prueba_doc_original.txt
       simbolico_doc.txt
   fuentes
+    sec_engine.c
   preparados
+    conexiones_syn.txt
+    mediciones_sec.txt
+    sshd_activo.txt
+    usuarios_creados.txt
   README.md
   resultados
+    informe_20261113_092750.txt
+    informe_20261113_094613.txt
+    informe_20261113_100141.txt
   scripts
+    capturar.sh
     etapa1_entorno.sh
+    etapa2_estaticos.sh
+    normalizar.sh
