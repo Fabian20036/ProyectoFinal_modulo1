@@ -1,9 +1,17 @@
-Proceso: sleep 300, PID 1453255
+Proceso: sleep 300, PID 1546652
 
 Iniciado (S = dormido):
     PID STAT CMD
-1453255 S+   sleep 300
+1546652 S+   sleep 300
 
 Suspendido con kill -STOP (T = detenido):
     PID STAT CMD
-1453255 T+   sleep 300
+1546652 T+   sleep 300
+
+Reanudado con kill -CONT (S = dormido):
+    PID STAT CMD
+1546652 S+   sleep 300
+
+Terminado con kill -TERM:
+    PID TTY          TIME CMD
+El proceso 1546652 ya no existe
