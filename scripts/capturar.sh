@@ -27,7 +27,7 @@ for i in $(seq 1 "$CAPTURAS"); do
     echo "$FECHA PERMISOS $PERMISOS" >> "$RAW"
 
     # Evidencia: salida original de los comandos
-    echo "=== Captura $i ($FECHA) ===" >> "$EVIDENCIA"
+    echo " Captura $i ($FECHA) " >> "$EVIDENCIA"
     df -P "$HOME" >> "$EVIDENCIA"
     ps -u "$USER" >> "$EVIDENCIA"
 
