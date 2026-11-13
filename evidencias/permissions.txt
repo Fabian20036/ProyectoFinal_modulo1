@@ -1,0 +1,47 @@
+PERMISOS DE sec_guard
+La justificación está en README.md
+
+drwxr-x--- 8 becario12 becario12 145 Nov 12 23:51 /home/becario12/sec_guard
+/home/becario12/sec_guard:
+total 8
+drwxr-x--- 3 becario12 becario12   23 Nov 12 23:02 capturas
+lrwxrwxrwx 1 becario12 becario12   18 Nov 12 23:51 enlace_pruebas -> evidencias/pruebas
+drwxr-x--- 3 becario12 becario12   96 Nov 12 23:51 evidencias
+drwxr-x--- 2 becario12 becario12    6 Nov 10 00:27 fuentes
+drwxr-x--- 2 becario12 becario12    6 Nov 10 00:27 preparados
+-rw-r----- 1 becario12 becario12 5530 Nov 12 19:24 README.md
+drwxr-x--- 2 becario12 becario12    6 Nov 10 00:27 resultados
+drwxr-x--- 2 becario12 becario12   31 Nov 12 23:51 scripts
+
+/home/becario12/sec_guard/capturas:
+total 0
+drwxr-x--- 2 becario12 becario12 6 Nov 12 23:02 estaticos
+
+/home/becario12/sec_guard/capturas/estaticos:
+total 0
+
+/home/becario12/sec_guard/evidencias:
+total 12
+-rw-r----- 1 becario12 becario12  229 Nov 10 23:04 arbol_directorios.txt
+-rw-r----- 1 becario12 becario12 3319 Nov 12 23:51 link_record.txt
+-rw-r----- 1 becario12 becario12  136 Nov 12 23:51 permissions.txt
+drwxr-x--- 2 becario12 becario12   82 Nov 12 23:51 pruebas
+
+/home/becario12/sec_guard/evidencias/pruebas:
+total 8
+-rw-r----- 2 becario12 becario12 143 Nov 12 23:51 hardlink.txt
+-rw-r----- 2 becario12 becario12 143 Nov 12 23:51 prueba_doc_original.txt
+lrwxrwxrwx 1 becario12 becario12  14 Nov 12 23:51 simbolico_doc.txt -> prueba_doc.txt
+
+/home/becario12/sec_guard/fuentes:
+total 0
+
+/home/becario12/sec_guard/preparados:
+total 0
+
+/home/becario12/sec_guard/resultados:
+total 0
+
+/home/becario12/sec_guard/scripts:
+total 4
+-rwxr-x--- 1 becario12 becario12 2981 Nov 12 23:51 etapa1_entorno.sh

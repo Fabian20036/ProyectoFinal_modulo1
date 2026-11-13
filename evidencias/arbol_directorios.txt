@@ -1,0 +1,18 @@
+.
+  capturas
+    estaticos
+  enlace_pruebas
+  evidencias
+    arbol_directorios.txt
+    link_record.txt
+    permissions.txt
+    pruebas
+      hardlink.txt
+      prueba_doc_original.txt
+      simbolico_doc.txt
+  fuentes
+  preparados
+  README.md
+  resultados
+  scripts
+    etapa1_entorno.sh

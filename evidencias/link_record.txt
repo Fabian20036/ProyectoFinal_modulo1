@@ -1,0 +1,66 @@
+ ANTES DE RENOMBRAR 
+  File: prueba_doc.txt
+  Size: 116       	Blocks: 8          IO Block: 4096   regular file
+Device: 252,4	Inode: 84097550    Links: 2
+Access: (0640/-rw-r-----)  Uid: ( 1026/becario12)   Gid: ( 1026/becario12)
+Access: 2026-11-12 23:51:48.778925956 +0000
+Modify: 2026-11-12 23:51:48.780925972 +0000
+Change: 2026-11-12 23:51:48.783925997 +0000
+ Birth: 2026-11-12 23:51:48.778925956 +0000
+  File: hardlink.txt
+  Size: 116       	Blocks: 8          IO Block: 4096   regular file
+Device: 252,4	Inode: 84097550    Links: 2
+Access: (0640/-rw-r-----)  Uid: ( 1026/becario12)   Gid: ( 1026/becario12)
+Access: 2026-11-12 23:51:48.778925956 +0000
+Modify: 2026-11-12 23:51:48.780925972 +0000
+Change: 2026-11-12 23:51:48.783925997 +0000
+ Birth: 2026-11-12 23:51:48.778925956 +0000
+  File: simbolico_doc.txt -> prueba_doc.txt
+  Size: 14        	Blocks: 0          IO Block: 4096   symbolic link
+Device: 252,4	Inode: 84097558    Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: ( 1026/becario12)   Gid: ( 1026/becario12)
+Access: 2026-11-12 23:51:48.786926022 +0000
+Modify: 2026-11-12 23:51:48.786926022 +0000
+Change: 2026-11-12 23:51:48.786926022 +0000
+ Birth: 2026-11-12 23:51:48.786926022 +0000
+  File: /home/becario12/sec_guard/enlace_pruebas -> evidencias/pruebas
+  Size: 18        	Blocks: 0          IO Block: 4096   symbolic link
+Device: 252,4	Inode: 9548011     Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: ( 1026/becario12)   Gid: ( 1026/becario12)
+Access: 2026-11-12 23:51:48.776925939 +0000
+Modify: 2026-11-12 23:51:48.776925939 +0000
+Change: 2026-11-12 23:51:48.776925939 +0000
+ Birth: 2026-11-12 23:51:48.776925939 +0000
+ DESPUES DE RENOMBRAR Y MODIFICAR (prueba_doc.txt -> prueba_doc_original.txt) 
+  File: prueba_doc_original.txt
+  Size: 143       	Blocks: 8          IO Block: 4096   regular file
+Device: 252,4	Inode: 84097550    Links: 2
+Access: (0640/-rw-r-----)  Uid: ( 1026/becario12)   Gid: ( 1026/becario12)
+Access: 2026-11-12 23:51:48.778925956 +0000
+Modify: 2026-11-12 23:51:48.803926162 +0000
+Change: 2026-11-12 23:51:48.803926162 +0000
+ Birth: 2026-11-12 23:51:48.778925956 +0000
+  File: hardlink.txt
+  Size: 143       	Blocks: 8          IO Block: 4096   regular file
+Device: 252,4	Inode: 84097550    Links: 2
+Access: (0640/-rw-r-----)  Uid: ( 1026/becario12)   Gid: ( 1026/becario12)
+Access: 2026-11-12 23:51:48.778925956 +0000
+Modify: 2026-11-12 23:51:48.803926162 +0000
+Change: 2026-11-12 23:51:48.803926162 +0000
+ Birth: 2026-11-12 23:51:48.778925956 +0000
+  File: simbolico_doc.txt -> prueba_doc.txt
+  Size: 14        	Blocks: 0          IO Block: 4096   symbolic link
+Device: 252,4	Inode: 84097558    Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: ( 1026/becario12)   Gid: ( 1026/becario12)
+Access: 2026-11-12 23:51:48.795926096 +0000
+Modify: 2026-11-12 23:51:48.786926022 +0000
+Change: 2026-11-12 23:51:48.786926022 +0000
+ Birth: 2026-11-12 23:51:48.786926022 +0000
+  File: /home/becario12/sec_guard/enlace_pruebas -> evidencias/pruebas
+  Size: 18        	Blocks: 0          IO Block: 4096   symbolic link
+Device: 252,4	Inode: 9548011     Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: ( 1026/becario12)   Gid: ( 1026/becario12)
+Access: 2026-11-12 23:51:48.796926104 +0000
+Modify: 2026-11-12 23:51:48.776925939 +0000
+Change: 2026-11-12 23:51:48.776925939 +0000
+ Birth: 2026-11-12 23:51:48.776925939 +0000
