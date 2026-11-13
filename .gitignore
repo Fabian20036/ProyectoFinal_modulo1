@@ -1,1 +1,6 @@
 fuentes/sec_engine
+preparados/
+capturas/telemetria_raw.log
+capturas/evidencia_capturas.log
+capturas/estaticos/*.log
+capturas/estaticos/sshd_config
