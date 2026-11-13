@@ -210,3 +210,38 @@ casos.
 Además, validamos la integridad del paquete *.tar.gz* con *gzip -t*
 (compresión) y *tar -tzf* (estructura) antes de extraerlo, y
 comprobamos que contenga al menos 3 archivos.
+
+
+### Etapa 3. Analizador en C
+
+**1. ¿Qué diferencia existe entre almacenar una medición y
+almacenar el resumen de una categoría?**
+
+Una *Medicion* guarda un dato tal como llegó del archivo: su
+categoría (0, 1 o 2) y su valor. Hay tantas como registros, y
+las guardamos en un arreglo que reservamos con *malloc*.
+Una *Categoria* guarda lo acumulado de una categoría: cantidad,
+suma, mínimo, máximo y alertas, además de su nombre y su límite.
+Hay solo tres, en el arreglo *cats*. Las mediciones son la
+entrada; las categorías, el resultado del procesamiento.
+
+**2. ¿Cómo evitarán una división entre cero o utilizar un mínimo
+que todavía no se ha inicializado?**
+
+En *escribir*, si la cantidad de una categoría es cero,
+escribimos "Sin datos" y pasamos a la siguiente con *continue*,
+así que el promedio solo se calcula cuando hay observaciones.
+En *procesar*, cuando llega la primera medición de una
+categoría (su cantidad todavía es cero), asignamos su valor al
+mínimo y al máximo. Así nunca comparamos contra un valor que no
+se midió.
+
+**3. Si ocurre un error después de reservar memoria y abrir un
+archivo, ¿qué recursos deben liberar o cerrar?**
+
+La memoria del arreglo de mediciones, con *free*, y el archivo
+de entrada, con *fclose*. En *leer*, antes de cada *exit(1)*
+posterior a *malloc*, liberamos la memoria y cerramos el
+archivo. En *main*, liberamos la memoria después de escribir el
+informe, y en *escribir* comprobamos que *fclose* cierre bien el
+archivo de salida.
